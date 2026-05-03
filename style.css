@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(218, 23%, 16%); /* لون الخلفية الداكن */
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- مقاسات الكمبيوتر (التي وضعتها أنت) --- */
+.card {
+    background-color: hsl(217, 19%, 24%); /* لون البطاقة */
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 1000px;
+    height: 1000px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+}
+
+.advice-id {
+    color: hsl(150, 100%, 66%); /* اللون الأخضر */
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.advice-text {
+    color: hsl(193, 38%, 86%); /* لون النص الفاتح */
+    font-size: 60px;
+    line-height: 2.3;
+    margin-bottom: 60px;
+}
+
+/* تصميم الخط الفاصل */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.line {
+    height: 1px;
+    background-color: hsl(217, 19%, 38%);
+    flex-grow: 1;
+}
+
+.pause-icon {
+    color: hsl(193, 38%, 86%);
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+/* تصميم زر النرد */
+.dice-btn {
+    background-color: hsl(150, 100%, 66%);
+    border: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -30px; /* لإبراز الزر خارج البطاقة من الأسفل */
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dice-btn svg {
+    margin-top: 20px ;
+    margin-left: 17px;
+    transform: scale(3);
+}
+
+/* تأثير الإضاءة عند تمرير الماوس */
+.dice-btn:hover {
+    box-shadow: 0 0 35px hsl(150, 100%, 66%);
+}
+
+
+/* --- مقاسات الجوال (تم التعديل هنا فقط لتناسب الشاشات الصغيرة) --- */
+@media (max-width: 768px) {
+    .card {
+        height: auto; /* إلغاء الطول الثابت 1000 بكسل ليتقلص حسب محتواه */
+        padding: 40px 20px;
+        padding-bottom: 60px; /* مساحة إضافية بالأسفل لزر النرد */
+    }
+
+    .advice-id {
+        font-size: 16px; /* تصغير حجم رقم النصيحة */
+        letter-spacing: 5px;
+        margin-bottom: 25px;
+    }
+
+    .advice-text {
+        font-size: 26px; /* تصغير حجم نص النصيحة */
+        line-height: 1.5;
+        margin-bottom: 30px;
+    }
+
+    .pause-icon {
+        font-size: 16px; /* تصغير أيقونة الإيقاف المؤقت */
+        letter-spacing: 3px;
+    }
+
+    .dice-btn {
+        width: 65px; /* تصغير حجم الزر */
+        height: 65px;
+        bottom: -32.5px; /* ضبط التمركز للخارج */
+    }
+
+    .dice-btn svg {
+        margin-top: 2.5px; /* إلغاء الهوامش الإضافية للأيقونة */
+        margin-left: 7px;
+        transform: scale(1.2); /* إرجاع حجم الأيقونة لحجم مناسب داخل الزر الصغير */
+    }
+}
